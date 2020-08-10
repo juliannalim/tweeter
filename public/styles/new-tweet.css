@@ -1,0 +1,31 @@
+.new-tweet {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+  min-width: 100%;
+
+}
+
+.new-tweet textarea {
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  background-color: #f4f1ec;
+  color: #000000;
+  border-bottom: 4px solid black;
+  width: 100%;
+}
+
+button {
+  font-family: "Bungee", sans-serif;
+  background-color: #4056a1;
+  color: #ffffff;
+  border: none;
+}
+
+output{
+  font-family: "Bungee", sans-serif;
+  float: right;
+} 
+
