@@ -33,6 +33,9 @@
   <!-- App JS -->
   <script type="text/javascript" src="/scripts/client.js"></script>
 
+  <!-- App JS -->
+  <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+
 
 </head>
 
@@ -53,18 +56,18 @@
   </header>
 
   <!-- Page-specific (main) content here -->
-  <main class="container"></main>
-  <section class="new-tweet">
-    <h2>Compose Tweet</h2>
-    <form action="/tweets" method="POST">
-      <!-- <label for="tweet-text">What are you humming about?</label> -->
-      <textarea name="text" for="tweet-text"> What are you humming about? </textarea>
-      <div>
-        <button type="submit">Tweet</button>
-        <output name="counter" class="counter" for="tweet-text">140</output>
-      </div>
-    </form>
-  </section>
+  <main class="container">
+    <section class="new-tweet">
+      <h2>Compose Tweet</h2>
+      <form action="/tweets" method="POST">
+        <textarea name="text" id='tweettextID' for="tweet-text" placeholder='What are you humming about?'></textarea>
+        <div>
+          <button type="submit">Tweet</button>
+          <output name="counter" class="counter" for="tweet-text">140</output>
+        </div>
+      </form>
+    </section>
+  </main>
 </body>
 
 </html>
