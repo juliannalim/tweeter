@@ -7,14 +7,15 @@
 
 }
 
-.new-tweet textarea {
+textarea {
   border-left: none;
   border-right: none;
   border-top: none;
   background-color: #f4f1ec;
   color: #000000;
   border-bottom: 4px solid black;
-  width: 100%;
+   width: 100%; 
+  /* height:  */ 
 }
 
 button {
