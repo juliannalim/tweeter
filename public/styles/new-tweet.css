@@ -1,31 +1,26 @@
 .new-tweet {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-items: center;
-  min-width: 100%;
-
 }
 
-textarea {
+.new-tweet textarea {
   border-left: none;
   border-right: none;
   border-top: none;
   background-color: #f4f1ec;
   color: #000000;
   border-bottom: 4px solid black;
-   width: 100%; 
-  /* height:  */ 
+  width: 100%; 
 }
 
-button {
+.new-tweet button {
   font-family: "Bungee", sans-serif;
   background-color: #4056a1;
   color: #ffffff;
   border: none;
 }
 
-output{
+.new-tweet output{
   font-family: "Bungee", sans-serif;
   float: right;
 } 
