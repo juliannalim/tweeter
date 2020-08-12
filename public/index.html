@@ -5,20 +5,26 @@
   <!-- Meta Information -->
   <title>Tweeter - Home Page</title>
 
-  <!-- External CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
-    type="text/css" />
-
   <!-- FONT IMPORT -->
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,300;0,700;1,300;1,700&display=swap"
     rel="stylesheet">
+
+  <!-- Twitter Icon Importing -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    type="text/css" />
 
   <!-- Nav CSS -->
   <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
 
   <!-- New-tweet CSS -->
   <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+
+  <!-- App Tweet Container-->
+  <link rel="stylesheet" href="/styles/tweet-container.css" type="text/css" />
 
   <!-- Header CSS -->
   <link rel="stylesheet" href="/styles/header.css" type="text/css" />
@@ -45,7 +51,7 @@
     <span>tweeter</span>
   </nav>
 
-  <header>
+  <header class="page-banner">
     <div>
       <img src="/images/profile-hex.png">
     </div>
@@ -67,6 +73,28 @@
         </div>
       </form>
     </section>
+
+
+    <article class="tweet-box">
+      <header>
+        <div>
+          <img src="/images/profile-hex.png">
+          <p>Potato One</p>
+        </div>
+        <p>@SweetPotato20</p>
+      </header>
+      <div>
+        <p>I am a potato that lives in the earth! Some people call me sweet...</p>
+      </div>
+      <footer>
+        <p>10 day ago</p>
+        <div>
+          <i class="fa fa-flag-o"></i>
+          <i class="fa fa-retweet"></i>
+          <i class="fa fa-heart-o"></i>
+        </div>
+      </footer>
+    </article>
   </main>
 </body>
 
