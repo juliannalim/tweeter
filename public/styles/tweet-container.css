@@ -13,13 +13,27 @@
   width: 100%;
 }
 
-.tweet-box header p{
-  display: flex;
+.tweet-box #username{
+  margin-left: 10px;
+}
+
+.tweet-box #userhandle{
+  display: none;
+}
+
+.tweet-box:hover #userhandle{
+    display: block;
+    color: gold;
+  }
+
+  .tweet-box:hover p{ 
+    display: block;
+    color: black;
+  }
   /* // call .tweetbox 
   //hover gets attached to the parent eleement to tweetbox
   // select the user name p 
   // change display property to block  */
-}
 
 .tweet-box header div{
   display: flex;
@@ -34,29 +48,26 @@
 
 .tweet-box div p{
   display: flex;
+}
+
+.tweet-content {
   border-bottom: 4px solid black;
 }
 
 .tweet-box div{
   display: flex;
-  width: 100%;
 }
 
-.tweet-box footer{
+.tweet-footer {
   display: flex;
   justify-content: space-between;
   width: 100%;
-  border-top: 4px black;
 }
 
-.tweet-box footer p{
-  display:flex;
-  justify-items: flex-start;
-}
-
-.tweet-box footer div{
-  display: flex;
-  justify-items: flex-end;
+.tweet-footer .icons {
+  display: block;
+  margin-top: 1em;
+  margin-bottom: 1em;
 }
 
 .tweet-box:hover {
