@@ -94,15 +94,22 @@ $(document).ready(function () {
     //encode a set of form elements as a string for submission.
     const serialized = $(this).serialize();
 
-    $.ajax({
-      url: "/tweets",
-      method: "POST",
-      data: serialized
-    }).then((response) => {
-      console.log("tweet posted");
-      loadTweets();
-      // turns the form blank
-      $('#tweettextID').val('');
-    });
+    //form won't submit if it meets these condition 
+    if ($('#tweettextID').val().length === 0) {
+      alert('Cannot post an empty tweet!')
+    } else if ($('#tweettextID').val().length > 140) {
+      alert('Tweets must be less than 140 characters. You can submit another tweet to complete your woke thoughts!')
+    } else {
+      $.ajax({
+        url: "/tweets",
+        method: "POST",
+        data: serialized
+      }).then((response) => {
+        console.log("tweet posted");
+        loadTweets();
+        // turns the form blank
+        $('#tweettextID').val('');
+      });
+    }
   });
 });
