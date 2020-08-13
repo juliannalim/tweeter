@@ -42,6 +42,7 @@
   <!-- App JS -->
   <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
 
+  <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
 
 </head>
 
@@ -52,35 +53,39 @@
     <a><b>Write</b> a new tweet <br /> <i class="fa fa-angle-double-down" style="color: #FA8128"> </i></a>
   </nav>
 
-  <header class="page-banner">
-    <div>
-      <img src="/images/profile-hex.png">
-    </div>
-    <br>
-    <div>
-      <h2><span>Potato </span>Lim</h2>
+  <div class="layoutContainer">
 
-    </div>
-  </header>
-
-  <!-- Page-specific (main) content here -->
-  <section class="new-tweet">
-    <!-- <h2>Compose Tweet</h2> -->
-    <form action="/tweets" method="POST">
-      <h6 id="error"></h6>
-      <textarea name="text" id='tweettextID' for="tweet-text" placeholder='What are you humming about?'></textarea>
+    <header class="page-banner">
       <div>
-        <button type="submit">Tweet</button>
-        <output name="counter" class="counter" for="tweet-text">140</output>
+        <img src="/images/profile-hex.png">
       </div>
-    </form>
-  </section>
+      <br>
+      <div>
+        <h2><span>Julianna </span>Lim</h2>
+      </div>
+    </header>
 
-  <section id="tweet-box"></section>
+    <!-- NEED TO ASK MENTOR ABOUT THIS -->
+    <main class="container">
 
-  <!-- NEED TO ASK MENTOR ABOUT THIS -->
-  <main class="container">
-  </main>
+      <!-- Page-specific (main) content here -->
+      <section class="new-tweet">
+        <!-- <h2>Compose Tweet</h2> -->
+        <form action="/tweets" method="POST">
+          <h6 id="error"></h6>
+          <textarea name="text" id='tweettextID' for="tweet-text" placeholder='What are you humming about?'></textarea>
+          <div>
+            <button type="submit">Tweet</button>
+            <output name="counter" class="counter" for="tweet-text">140</output>
+          </div>
+        </form>
+      </section>
+
+      <section id="tweet-box"></section>
+
+    </main>
+
+  </div>
 </body>
 
 </html>
