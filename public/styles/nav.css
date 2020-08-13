@@ -18,3 +18,18 @@ nav a {
 nav span {
   font-family: 'Bungee', sans-serif;
 }
+
+
+@media only screen and (min-width: 1024px) {
+  nav {
+    position: static;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  nav {
+    /* flex-direction: column; */
+    font-size: 20px;
+    /* padding: 0; */
+  }
+}

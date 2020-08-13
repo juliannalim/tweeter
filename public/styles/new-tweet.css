@@ -1,14 +1,18 @@
 .new-tweet {
+  display: flex;
   flex-direction: column;
   margin: 2em auto;
-  width: 90%;
+  margin-right: 1em;
+  margin-top: 10px;
+  width: 90%
 }
 
 .new-tweet textarea {
   background-color: #f4f1ec;
+  border: none;
   border-bottom: 4px solid black;
   color: #000000;
-  padding: 20px;
+  padding: 10px;
   width: 100%; 
 }
 
@@ -24,3 +28,8 @@
   font-family: "Bungee", sans-serif;
 } 
 
+@media only screen and (max-width: 768px) {
+  .new-tweet {
+    margin-top: 0;
+  }
+}

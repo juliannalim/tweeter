@@ -72,3 +72,11 @@
 .tweet-box:hover {
   box-shadow: 10px 10px 5px	#A9A9A9;
 }
+
+@media only screen and (min-width: 1024px) {
+  .tweet-box {
+    width: 90%;
+    /* justify-content: space-between; */
+    float: right;
+  }
+}
