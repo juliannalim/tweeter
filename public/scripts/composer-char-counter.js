@@ -1,3 +1,5 @@
+/* eslint-env jquery, browser */
+
 $(document).ready(function () {
 
   $('#tweettextID').on('keyup', function () {

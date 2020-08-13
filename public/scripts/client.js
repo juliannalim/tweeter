@@ -1,21 +1,23 @@
+/* eslint-env jquery, browser */
+
 const renderTweets = function (tweets) {
   const sortedTweets = tweets.sort(function (a, b) {
     return a.created_at - b.created_at;
   });
   // loops through tweets
-  for (tweet of sortedTweets) {
+  for (let tweet of sortedTweets) {
     // calls createTweetElement for each tweet
     const tempTweet = createTweetElement(tweet);
     $('#tweet-box').prepend(tempTweet);
   }
   // takes return value and appends it to the tweets container
-}
+};
 // to make sure we don't get hacked, put it on every single thing display data
 const escape = function (str) {
   let div = document.createElement('div');
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
-}
+};
 
 const createTweetElement = function (tweet) {
   let createdAt = new Date(tweet.created_at);
@@ -42,9 +44,9 @@ const createTweetElement = function (tweet) {
             <i class="fa fa-heart-o" style="color:red;"></i>
           </div>
         </footer>
-    </article>`
+    </article>`;
   return $tweet;
-}
+};
 
 //create an AJAX get the tweets
 $(document).ready(function () {
@@ -71,13 +73,13 @@ $(document).ready(function () {
     //encode a set of form elements as a string for submission.
     const serialized = $(this).serialize();
 
-    //form won't submit if it meets these condition 
+    //form won't submit if it meets these condition
     if ($('#tweettextID').val().length === 0) {
       // alert('Cannot post an empty tweet!')
-      $('#error').text('⚠️Cannot post an empty tweet.⚠️')
+      $('#error').text('⚠️Cannot post an empty tweet.⚠️');
       $("#error").slideDown(300);
     } else if ($('#tweettextID').val().length > 140) {
-      $('#error').text('⚠️Tweets must be less than 140 characters. You can submit another tweet to complete your woke thoughts!⚠️')
+      $('#error').text('⚠️Tweets must be less than 140 characters. You can submit another tweet to complete your woke thoughts!⚠️');
       $("#error").slideDown(300);
     } else {
       $.ajax({
