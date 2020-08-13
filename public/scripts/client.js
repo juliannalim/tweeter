@@ -6,7 +6,7 @@ const renderTweets = function (tweets) {
   for (tweet of sortedTweets) {
     // calls createTweetElement for each tweet
     const tempTweet = createTweetElement(tweet);
-    $('.container').prepend(tempTweet);
+    $('#tweet-box').prepend(tempTweet);
   }
   // takes return value and appends it to the tweets container
 }
@@ -39,7 +39,7 @@ const createTweetElement = function (tweet) {
           <div class='icons'>
             <i class="fa fa-flag-o"></i>
             <i class="fa fa-retweet"></i>
-            <i class="fa fa-heart-o"></i>
+            <i class="fa fa-heart-o" style="color:red;"></i>
           </div>
         </footer>
     </article>`
