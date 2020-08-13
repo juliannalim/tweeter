@@ -8,6 +8,7 @@
 .tweet-box header{
   display: flex;
   justify-content: space-between;
+  padding-right: 30px;
   width: 100%;
 }
 
@@ -21,7 +22,7 @@
 
 .tweet-box:hover #userhandle{
   display: block;
-  color: gold;
+  color: 	#A9A9A9;
 }
 
 .tweet-box:hover p{ 
@@ -69,5 +70,5 @@
 }
 
 .tweet-box:hover {
-  box-shadow: 10px 10px 5px gold;
+  box-shadow: 10px 10px 5px	#A9A9A9;
 }
