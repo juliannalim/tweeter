@@ -5,22 +5,22 @@
 }
 
 .new-tweet textarea {
-  border-bottom: 4px solid black;
   background-color: #f4f1ec;
+  border-bottom: 4px solid black;
   color: #000000;
   padding: 20px;
   width: 100%; 
 }
 
 .new-tweet button {
-  font-family: "Bungee", sans-serif;
   background-color: #4056a1;
-  color: #ffffff;
   border: none;
+  color: #ffffff;
+  font-family: "Bungee", sans-serif;
 }
 
 .new-tweet output{
-  font-family: "Bungee", sans-serif;
   float: right;
+  font-family: "Bungee", sans-serif;
 } 
 

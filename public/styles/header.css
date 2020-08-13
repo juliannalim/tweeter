@@ -1,15 +1,14 @@
 .page-banner {
-  display: flex;
-  /* font-family: 'Bungee', sans-serif; */
-  height: 400px;
-  width: 100%;
   align-items: center;
-  justify-content: center;
-  flex-direction: column;
+  display: flex;
   background-color: #001a2e;
-  color: #FFFFFF;
   background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
+  color: #FFFFFF;
+  flex-direction: column;
+  height: 400px;
+  justify-content: center;
   margin-top: 120px;
+  width: 100%;
 }
 
 .page-banner div h2 {

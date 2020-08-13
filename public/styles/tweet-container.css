@@ -1,8 +1,6 @@
 .tweet-box {
-  /* display: flex; */
-  flex-direction: column;
-  /* align-items: center; */
   border: 4px solid black;
+  flex-direction: column;
   margin: 1em;
   padding: 20px;
 }
@@ -22,14 +20,14 @@
 }
 
 .tweet-box:hover #userhandle{
-    display: block;
-    color: gold;
-  }
+  display: block;
+  color: gold;
+}
 
-  .tweet-box:hover p{ 
-    display: block;
-    color: black;
-  }
+.tweet-box:hover p{ 
+  color: black;
+  display: block;
+}
   /* // call .tweetbox 
   //hover gets attached to the parent eleement to tweetbox
   // select the user name p 
@@ -41,9 +39,9 @@
 }
 
 .tweet-box header div img{
-  width: 40px;
   height: 40px;
   margin-top: 15px;
+  width: 40px;
 }
 
 .tweet-box div p{
@@ -66,8 +64,8 @@
 
 .tweet-footer .icons {
   display: block;
-  margin-top: 1em;
   margin-bottom: 1em;
+  margin-top: 1em;
 }
 
 .tweet-box:hover {
