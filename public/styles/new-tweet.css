@@ -1,10 +1,6 @@
 .new-tweet {
   display: flex;
   flex-direction: column;
-  margin: 2em auto;
-  margin-right: 1em;
-  margin-top: 10px;
-  width: 90%
 }
 
 .new-tweet textarea {
@@ -28,8 +24,10 @@
   font-family: "Bungee", sans-serif;
 } 
 
-@media only screen and (max-width: 768px) {
+@media only screen and (min-width: 1024px) {
   .new-tweet {
-    margin-top: 0;
+    margin: 2em auto;
+    margin-left: 3.5em;
+    width: 90%
   }
 }

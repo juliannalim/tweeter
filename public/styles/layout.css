@@ -3,6 +3,7 @@
  * https://css-tricks.com/international-box-sizing-awareness-day/
  * Do not modify these two selectors, please
  */
+ 
 html {
   box-sizing: border-box;
 }
@@ -24,21 +25,16 @@ body {
 .layoutContainer {
   display: flex;
   align-items: flex-start;
-  padding: 3rem;
+  flex-direction: column;
+  margin-top: 120px;
 }
 
-
-@media only screen and (max-width: 768px) {
-  .layoutContainer {
-    flex-direction: column;
-    font-size: 16px;
-    padding: 0;
-  }
-}
 
 @media only screen and (min-width: 1024px) {
   .layoutContainer {
     flex-direction: row;
+    margin-top: 0;
+    padding: 3em;
   }
 }
 
@@ -46,9 +42,9 @@ main {
   flex-direction: column;
   display: flex;
   margin: auto;
+  padding-top: 50px;
   width: 90%;
 }
-
 
 #error {
   border: 4px solid red;
