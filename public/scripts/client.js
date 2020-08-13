@@ -1,64 +1,41 @@
-/*
- * Client-side JS logic goes here
- * jQuery is already loaded
- * Reminder: Use (and do all your DOM work in) jQuery's document ready function
- */
-
-// const data = [
-//   {
-//     "user": {
-//       "name": "Newton",
-//       "avatars": "https://i.imgur.com/73hZDYK.png"
-//       ,
-//       "handle": "@SirIsaac"
-//     },
-//     "content": {
-//       "text": "If I have seen further it is by standing on the shoulders of giants"
-//     },
-//     "created_at": 1461116232227
-//   },
-//   {
-//     "user": {
-//       "name": "Descartes",
-//       "avatars": "https://i.imgur.com/nlhLi3I.png",
-//       "handle": "@rd"
-//     },
-//     "content": {
-//       "text": "Je pense , donc je suis"
-//     },
-//     "created_at": 1461113959088
-//   }
-// ]
-
 const renderTweets = function (tweets) {
+  const sortedTweets = tweets.sort(function (a, b) {
+    return a.created_at - b.created_at;
+  });
   // loops through tweets
-  for (tweet of tweets) {
+  for (tweet of sortedTweets) {
     // calls createTweetElement for each tweet
-    let tempTweet = createTweetElement(tweet);
-    $('.container').append(tempTweet);
+    const tempTweet = createTweetElement(tweet);
+    $('.container').prepend(tempTweet);
   }
   // takes return value and appends it to the tweets container
+}
+// to make sure we don't get hacked, put it on every single thing display data
+const escape = function (str) {
+  let div = document.createElement('div');
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
 }
 
 const createTweetElement = function (tweet) {
   let createdAt = new Date(tweet.created_at);
   let today = Date.now();
+  let minutesAgo = Math.round((today - createdAt) / 1000 / 60);
   let daysAgo = Math.round((today - createdAt) / 1000 / 60 / 60 / 24);
-  console.log(daysAgo);
   let $tweet =
     `<article class="tweet-box">
       <header>
       <div class='tweet-header'>
-          <img src='${tweet.user.avatars}'>
+          <img src='${escape(tweet.user.avatars)}'>
             <p id='username'>${tweet.user.name}</p>
         </div>
-          <p id='userhandle'>${tweet.user.handle}</p>
+          <p id='userhandle'>${escape(tweet.user.handle)}</p>
       </header>
         <div class='tweet-content'>
-          <p>${tweet.content.text}</p>
+          <p>${escape(tweet.content.text)}</p>
         </div>
         <footer class='tweet-footer'>
-          <p class='daysAgo'> ${daysAgo} days ago</p>
+          <p class='daysAgo'> ${daysAgo < 1 ? minutesAgo + ' minutes' : daysAgo + ' days'} ago</p>
           <div class='icons'>
             <i class="fa fa-flag-o"></i>
             <i class="fa fa-retweet"></i>
@@ -96,9 +73,12 @@ $(document).ready(function () {
 
     //form won't submit if it meets these condition 
     if ($('#tweettextID').val().length === 0) {
-      alert('Cannot post an empty tweet!')
+      // alert('Cannot post an empty tweet!')
+      $('#error').text('⚠️Cannot post an empty tweet.⚠️')
+      $("#error").slideDown(300);
     } else if ($('#tweettextID').val().length > 140) {
-      alert('Tweets must be less than 140 characters. You can submit another tweet to complete your woke thoughts!')
+      $('#error').text('⚠️Tweets must be less than 140 characters. You can submit another tweet to complete your woke thoughts!⚠️')
+      $("#error").slideDown(300);
     } else {
       $.ajax({
         url: "/tweets",
@@ -107,8 +87,10 @@ $(document).ready(function () {
       }).then((response) => {
         console.log("tweet posted");
         loadTweets();
+        $('#error').css('display', 'none');
         // turns the form blank
         $('#tweettextID').val('');
+        $('.counter').val('140');
       });
     }
   });
